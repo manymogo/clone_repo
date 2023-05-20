@@ -21,7 +21,7 @@ const songs = [
   },
   {
     path: "mp3/electronic-rock-king-around-here.mp3",
-    displayName: "Electronic Rock (King Around Here)",
+    displayName: "Electronic Rock",
     cover: "img/electronic-rock-king-around-here.jpeg",
     artist: "AlexGrohl"
   },
