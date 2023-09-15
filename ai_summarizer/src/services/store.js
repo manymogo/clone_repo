@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
+import { setupListeners } from '@reduxjs/toolkit/dist/query';
 
 import { articleApi } from './article';
 
@@ -8,3 +9,5 @@ export const store = configureStore({
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(articleApi.middleware),
 });
+
+setupListeners(store.dispatch);
