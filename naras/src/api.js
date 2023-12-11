@@ -10,3 +10,25 @@ export async function fetchCountries() {
     console.log(e);
   }
 }
+
+export async function fetchSearchResults(q) {
+  try {
+    const response = await axios.get(`https://naras-api.vercel.app/search?q=${q}`);
+
+    return response.data;
+  } catch (e) {
+    return [];
+    console.log(e);
+  }
+}
+
+export async function fetchCountry(code) {
+  try {
+    const response = await axios.get(`https://naras-api.vercel.app/code/${code}`);
+
+    return response.data;
+  } catch (e) {
+    return null;
+    console.log(e);
+  }
+}
