@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { fetchCountry } from '../api';
 import { useEffect, useState } from 'react';
+import style from './Country.module.css';
 
 export default function Country() {
   const [country, setCountry] = useState();
@@ -8,13 +9,46 @@ export default function Country() {
   const params = useParams();
 
   const setInitData = async () => {
-    const data = fetchCountry(params.code);
+    const data = await fetchCountry(params.code);
     setCountry(data);
+    console.log(data);
   };
 
   useEffect(() => {
     setInitData();
   }, [params.code]);
 
-  return <div>Country : {params.code}</div>;
+  if (!country) {
+    return <div>LODING ...</div>;
+  }
+
+  return (
+    <div className={style.container}>
+      <div className={style.header}>
+        <div className={style.commonName}>
+          {country.flagEmoji}&nbsp;{country.commonName}
+        </div>
+        <div className={style.officialName}>{country.officialName}</div>
+      </div>
+
+      <img src={country.flagImg} alt={`${country.commonName}의 국기 이미지입니다.`} />
+      <div className={style.body}>
+        <div>
+          <b>코드 :</b>&nbsp;{country.code}
+        </div>
+        <div>
+          <b>수도 :</b>&nbsp;{country.capital.join(',')}
+        </div>
+        <div>
+          <b>지역 :</b>&nbsp;{country.region}
+        </div>
+        <div>
+          <b>지도 :</b>&nbsp;
+          <a target='_blank' href={country.googleMapURL}>
+            {country.googleMapURL}
+          </a>
+        </div>
+      </div>
+    </div>
+  );
 }
