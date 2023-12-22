@@ -15,7 +15,7 @@ export default function Country({ country }) {
 
 Country.Layout = SubLayout;
 
-const getStaticPaths = async () => {
+export const getStaticPaths = async () => {
   return {
     paths: [{ params: { code: 'ABW' } }, { params: { code: 'KOR' } }],
     fallback: false,
