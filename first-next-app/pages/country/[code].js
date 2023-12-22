@@ -15,12 +15,19 @@ export default function Country({ country }) {
 
 Country.Layout = SubLayout;
 
-export const getServerSideProps = async (context) => {
+const getStaticPaths = async () => {
+  return {
+    paths: [{ params: { code: 'ABW' } }, { params: { code: 'KOR' } }],
+    fallback: false,
+  };
+};
+
+export const getStaticProps = async (context) => {
   const { code } = context.params;
 
   let country = null;
   if (code) {
-    country = await fetchCountry();
+    country = await fetchCountry(code);
   }
 
   return {

@@ -10,7 +10,7 @@ export default function Home({ countries }) {
   );
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const countries = await fetchCountries();
 
   return {
