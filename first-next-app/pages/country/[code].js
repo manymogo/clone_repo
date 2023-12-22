@@ -42,5 +42,6 @@ export const getStaticProps = async (context) => {
     props: {
       country,
     },
+    revalidate: 3,
   };
 };
