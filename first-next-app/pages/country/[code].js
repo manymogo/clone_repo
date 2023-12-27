@@ -1,4 +1,4 @@
-import SubLayout from '@/Components/SubLayout';
+import SubLayout from '@/components/SubLayout';
 import { fetchCountry } from '@/api';
 import { useRouter } from 'next/router';
 

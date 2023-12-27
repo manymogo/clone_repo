@@ -1,9 +1,9 @@
-import SubLayout from '@/Components/SubLayout';
+import SubLayout from '@/components/SubLayout';
 import { fetchSearchResults } from '@/api';
 import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-export default function Search({ countries }) {
+export default function Search() {
   const router = useRouter();
   const { q } = router.query;
 
