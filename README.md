@@ -30,3 +30,6 @@
 
 📌 - 📆  [2023.11.20 ~ 2023.11.20] 🏷️ [React TodoList](https://github.com/manymogo/clone_repo/tree/main/reactTodos) 
 
+📌 - 📆  [2023.12.06 ~ 2023.12.13] 🏷️ [React NARAS project](https://github.com/manymogo/clone_repo/tree/main/naras) 
+
+📌 - 📆  [2023.12.14 ~ 2023.12.28] 🏷️ [Next NARAS project](https://github.com/manymogo/clone_repo/tree/main/first-next-app) 
